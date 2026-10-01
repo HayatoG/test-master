@@ -5,6 +5,11 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  // Fixtures do Playwright usam um parâmetro chamado `use`, que não é hook do React.
+  {
+    files: ["tests/**"],
+    rules: { "react-hooks/rules-of-hooks": "off" },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
@@ -12,6 +17,7 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    ".verify/**",
   ]),
 ]);
 

@@ -1,12 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import type { SessionPayload } from "@/lib/auth/session";
 
 export function UserMenu({ session }: { session: SessionPayload | null }) {
-  const router = useRouter();
-
   if (!session) {
     return (
       <Link href="/login" className="text-sm text-slate-100 underline-offset-4 hover:underline">
@@ -17,8 +14,9 @@ export function UserMenu({ session }: { session: SessionPayload | null }) {
 
   async function logout() {
     await fetch("/api/auth/logout", { method: "POST" });
-    router.push("/login?logout=1");
-    router.refresh();
+    // Navegação completa de propósito: descarta o cache do router com a sessão antiga.
+    // eslint-disable-next-line @next/next/no-location-assign-relative-destination
+    window.location.assign("/login?logout=1");
   }
 
   return (

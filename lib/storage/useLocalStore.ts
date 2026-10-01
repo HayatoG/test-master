@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 /**
  * Estado persistido no localStorage, inicializado a partir de um seed.
@@ -10,29 +10,33 @@ import { useCallback, useEffect, useState } from "react";
 export function useLocalStore<T>(key: string, seed: T) {
   const [value, setValue] = useState<T>(seed);
   const [hydrated, setHydrated] = useState(false);
+  const latest = useRef<T>(seed);
 
   useEffect(() => {
     try {
       const raw = localStorage.getItem(key);
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- leitura única do localStorage após montar
-      if (raw !== null) setValue(JSON.parse(raw) as T);
+      if (raw !== null) {
+        latest.current = JSON.parse(raw) as T;
+        setValue(latest.current);
+      }
     } catch {
       // valor corrompido: mantém o seed
     }
     setHydrated(true);
   }, [key]);
 
+  // Grava no localStorage na hora (e não dentro do updater do React), para que
+  // uma navegação logo em seguida já encontre o valor novo.
   const update = useCallback(
     (next: T | ((prev: T) => T)) => {
-      setValue((prev) => {
-        const resolved = typeof next === "function" ? (next as (p: T) => T)(prev) : next;
-        try {
-          localStorage.setItem(key, JSON.stringify(resolved));
-        } catch {
-          // storage indisponível: segue só em memória
-        }
-        return resolved;
-      });
+      const resolved = typeof next === "function" ? (next as (p: T) => T)(latest.current) : next;
+      latest.current = resolved;
+      try {
+        localStorage.setItem(key, JSON.stringify(resolved));
+      } catch {
+        // storage indisponível: segue só em memória
+      }
+      setValue(resolved);
     },
     [key],
   );
