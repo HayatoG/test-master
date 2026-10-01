@@ -23,7 +23,7 @@ export const PRODUCTS: readonly Product[] = [
   { id: 9, name: "Tapete de Yoga", sku: "ESP-002", category: "Esporte", price: 110.0, stock: 0, description: "Antiderrapante, 6mm." },
   { id: 10, name: "Camiseta Dry Fit", sku: "MOD-001", category: "Moda", price: 69.9, stock: 50, description: "Tecido respirável." },
   { id: 11, name: "Mochila Urbana 20L", sku: "MOD-002", category: "Moda", price: 189.0, stock: 14, description: "Compartimento para notebook 15\"." },
-  { id: 12, name: "Boné Clássico", sku: "MOD-003", category: "Moda", price: 10.01, stock: 100, description: "Ajuste traseiro com fivela." },
+  { id: 12, name: "Boné Clássico", sku: "MOD-003", category: "Moda", price: 50.0, stock: 100, description: "Ajuste traseiro com fivela." },
 ];
 
 export function findProduct(id: number) {

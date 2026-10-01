@@ -8,12 +8,15 @@ export type ModuleInfo = {
   summary: string;
   scenarios: string[];
   requiresLogin?: boolean;
+  /** Outras rotas que pertencem ao módulo (para destacar o menu). */
+  relatedPaths?: string[];
 };
 
 export const MODULES: readonly ModuleInfo[] = [
   {
     slug: "login",
     href: "/login",
+    relatedPaths: ["/area-logada", "/admin", "/trocar-senha"],
     title: "Login e autenticação",
     difficulty: "fácil",
     summary: "Usuários fixos com comportamentos diferentes, rotas protegidas, lembrar-me e logout.",
@@ -71,6 +74,7 @@ export const MODULES: readonly ModuleInfo[] = [
   {
     slug: "loja",
     href: "/loja",
+    relatedPaths: ["/carrinho", "/checkout", "/pedido"],
     title: "Carrinho e checkout",
     difficulty: "difícil",
     requiresLogin: true,

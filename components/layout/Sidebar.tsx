@@ -9,7 +9,7 @@ export function Sidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const items = [{ href: "/", title: "Início" }, ...MODULES.map((m) => ({ href: m.href, title: m.title }))];
+  const items = [{ href: "/", title: "Início", paths: [] as string[] }, ...MODULES.map((m) => ({ href: m.href, title: m.title, paths: [m.href, ...(m.relatedPaths ?? [])] }))];
 
   return (
     <nav aria-label="Módulos" className="md:w-60 md:shrink-0">
@@ -24,7 +24,7 @@ export function Sidebar() {
       </button>
       <ul id="menu-modulos" className={`${open ? "block" : "hidden"} space-y-1 md:sticky md:top-4 md:block`}>
         {items.map((item) => {
-          const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+          const active = item.href === "/" ? pathname === "/" : item.paths.some((p) => pathname === p || pathname.startsWith(`${p}/`));
           return (
             <li key={item.href}>
               <Link
