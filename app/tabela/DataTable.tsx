@@ -166,7 +166,7 @@ export function DataTable() {
         </div>
       </div>
 
-      <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
+      <div className="relative overflow-x-auto rounded-lg border border-slate-200 bg-white">
         <table className="w-full text-left text-sm" aria-busy={state.kind === "loading"}>
           <caption className="sr-only">Registros de clientes</caption>
           <thead className="bg-slate-50 text-slate-600">

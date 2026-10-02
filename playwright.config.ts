@@ -5,7 +5,8 @@ import { defineConfig, devices } from "@playwright/test";
  *   - sem BASE_URL: sobe o app local (build de produção) em http://localhost:3000
  *   - BASE_URL=https://seu-app.vercel.app npx playwright test → roda contra a Vercel
  */
-const baseURL = process.env.BASE_URL ?? "http://localhost:3000";
+// `||` (e não `??`) porque o GitHub Actions passa string vazia quando base_url não é informado.
+const baseURL = process.env.BASE_URL || "http://localhost:3000";
 const useLocalServer = !process.env.BASE_URL;
 
 export default defineConfig({

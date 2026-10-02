@@ -200,7 +200,7 @@ export function ProgressDownload() {
       {progress !== null && (
         <div className="mt-3">
           <div role="progressbar" aria-label="Progresso do download" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} className="h-3 overflow-hidden rounded-full bg-slate-200">
-            <div className="h-full bg-brand-600 transition-all" style={{ width: `${progress}%` }} />
+            <div className="h-full bg-brand-700 transition-all" style={{ width: `${progress}%` }} />
           </div>
           <p className="mt-2 text-sm" aria-live="polite">
             {progress >= 100 ? "Download concluído" : `${progress}%`}
@@ -274,7 +274,7 @@ export function InfiniteScroll() {
       <p className="mb-2 text-sm text-slate-600" data-testid="infinite-count" aria-live="polite">
         {count} de {TOTAL_ITEMS} itens
       </p>
-      <div ref={container} className="h-64 overflow-y-auto rounded-md border border-slate-200">
+      <div ref={container} tabIndex={0} role="region" aria-label="Lista com scroll infinito" className="h-64 overflow-y-auto rounded-md border border-slate-200">
         <ul aria-label="Itens carregados" className="divide-y divide-slate-100 text-sm">
           {Array.from({ length: count }, (_, i) => (
             <li key={i} className="px-3 py-2">

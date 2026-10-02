@@ -30,7 +30,7 @@ export default function ProdutosPage() {
         <p className="text-sm text-slate-600" data-testid="product-count">
           {hydrated ? `${products.length} ${products.length === 1 ? "produto" : "produtos"}` : ""}
         </p>
-        <Link href="/produtos/novo" className="rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700">
+        <Link href="/produtos/novo" className="rounded-md bg-brand-700 px-4 py-2 text-sm font-medium text-white hover:bg-brand-800">
           Novo produto
         </Link>
       </div>
@@ -43,7 +43,7 @@ export default function ProdutosPage() {
           <p className="mt-1 text-sm text-slate-600">Cadastre um produto ou use o reset para restaurar os dados iniciais.</p>
         </div>
       ) : (
-        <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
+        <div className="relative overflow-x-auto rounded-lg border border-slate-200 bg-white">
           <table className="w-full text-left text-sm">
             <caption className="sr-only">Produtos cadastrados</caption>
             <thead className="bg-slate-50 text-slate-600">

@@ -77,8 +77,7 @@ export const MODULES: readonly ModuleInfo[] = [
     relatedPaths: ["/carrinho", "/checkout", "/pedido"],
     title: "Carrinho e checkout",
     difficulty: "difícil",
-    requiresLogin: true,
-    summary: "Loja, carrinho, cupons, frete por CEP e checkout em 3 etapas até o pedido confirmado.",
+    summary: "Loja, carrinho, cupons, frete por CEP e checkout em 3 etapas até o pedido confirmado. O checkout exige login.",
     scenarios: [
       "Somar itens e quantidades e conferir o total",
       "Cupons válidos, expirados e com valor mínimo",

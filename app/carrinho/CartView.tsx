@@ -190,7 +190,7 @@ export function CartView() {
         <p className="text-sm text-slate-600" data-testid="free-shipping-hint">
           {missingForFree > 0 ? `Faltam ${formatBRL(missingForFree)} para ganhar frete grátis.` : "Você ganhou frete grátis!"}
         </p>
-        <Link href="/checkout" className="block rounded-md bg-brand-600 px-4 py-3 text-center font-medium text-white hover:bg-brand-700">
+        <Link href="/checkout" className="block rounded-md bg-brand-700 px-4 py-3 text-center font-medium text-white hover:bg-brand-800">
           Finalizar compra
         </Link>
         <Link href="/loja" className="block text-center text-sm text-brand-700 underline">

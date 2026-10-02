@@ -21,7 +21,7 @@ export default async function AdminPage() {
   return (
     <div>
       <PageHeader title="Painel administrativo" description="Visível apenas para o perfil admin." />
-      <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
+      <div className="relative overflow-x-auto rounded-lg border border-slate-200 bg-white">
         <table className="w-full text-left text-sm">
           <caption className="px-4 py-3 text-left font-semibold">Usuários cadastrados</caption>
           <thead className="bg-slate-50 text-slate-600">

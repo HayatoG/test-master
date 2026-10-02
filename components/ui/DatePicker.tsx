@@ -158,7 +158,7 @@ export function DatePicker({
                             onChange(iso);
                             setOpen(false);
                           }}
-                          className={`h-8 w-8 rounded-full ${selected ? "bg-brand-600 text-white" : "hover:bg-slate-100"} ${iso === today ? "font-bold" : ""} disabled:text-slate-300 disabled:hover:bg-transparent`}
+                          className={`h-8 w-8 rounded-full ${selected ? "bg-brand-700 text-white" : "hover:bg-slate-100"} ${iso === today ? "font-bold" : ""} disabled:text-slate-300 disabled:hover:bg-transparent`}
                         >
                           {day}
                         </button>

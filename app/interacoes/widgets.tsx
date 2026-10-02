@@ -509,7 +509,7 @@ export function Sliders() {
             data-testid="brightness-track"
             className="relative mt-3 h-2 cursor-pointer rounded-full bg-slate-200"
           >
-            <div className="absolute inset-y-0 left-0 rounded-full bg-brand-600" style={{ width: `${brightness}%` }} />
+            <div className="absolute inset-y-0 left-0 rounded-full bg-brand-700" style={{ width: `${brightness}%` }} />
             <div
               role="slider"
               tabIndex={0}

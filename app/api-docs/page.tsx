@@ -137,7 +137,7 @@ export default function ApiDocsPage() {
                   <dt className="text-slate-500">Respostas</dt>
                   <dd>{ep.responses}</dd>
                 </dl>
-                {ep.example && <pre className="mt-3 overflow-x-auto rounded bg-ink p-3 font-mono text-xs text-slate-100">{ep.example}</pre>}
+                {ep.example && <pre tabIndex={0} aria-label={`Exemplo de ${ep.method} ${ep.path}`} className="mt-3 overflow-x-auto rounded bg-ink p-3 font-mono text-xs text-slate-100">{ep.example}</pre>}
               </li>
             ))}
           </ul>

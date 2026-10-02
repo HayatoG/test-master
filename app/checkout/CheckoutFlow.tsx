@@ -148,7 +148,7 @@ export function CheckoutFlow() {
             <li
               key={label}
               aria-current={i === step ? "step" : undefined}
-              className={`flex-1 rounded-md border px-3 py-2 ${i === step ? "border-brand-600 bg-brand-50 font-semibold text-brand-700" : i < step ? "border-slate-200 bg-white text-slate-700" : "border-slate-200 bg-white text-slate-400"}`}
+              className={`flex-1 rounded-md border px-3 py-2 ${i === step ? "border-brand-600 bg-brand-50 font-semibold text-brand-700" : i < step ? "border-slate-200 bg-white text-slate-700" : "border-slate-200 bg-white text-slate-500"}`}
             >
               {i + 1}. {label}
               {i < step && <span className="sr-only"> (concluída)</span>}

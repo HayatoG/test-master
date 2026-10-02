@@ -77,7 +77,7 @@ function defineShadowElements() {
           .box { border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; background: #f8fafc; }
           label { display: block; font-size: 14px; font-weight: 500; }
           input { margin-top: 4px; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 6px; width: 100%; box-sizing: border-box; }
-          button { margin-top: 8px; padding: 6px 12px; border-radius: 6px; border: 0; background: #059669; color: white; cursor: pointer; }
+          button { margin-top: 8px; padding: 6px 12px; border-radius: 6px; border: 0; background: #047857; color: white; cursor: pointer; }
           p { font-size: 14px; margin: 8px 0 0; }
         </style>
         <div class="box">
